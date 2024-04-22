@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { hash } from 'bcrypt';
 import pool from '../database/pool'
 
 const router = Router();
@@ -20,8 +21,9 @@ router.post('/api/users/', async (req, res) => {
             return res.status(400).json({ error: "Username already exists" });
         }
         
+        const hashedPassword = await hash(req.body.password, 10);
         result = await client.query('INSERT INTO users (username, password) VALUES \($1, $2\)', 
-                                    [req.body.username, req.body.password]);
+                                    [req.body.username, hashedPassword]);
         
         res.json({ success: "Successfully created account" });
         client.release();

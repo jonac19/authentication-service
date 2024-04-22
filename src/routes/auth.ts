@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { compare } from 'bcrypt';
 import pool from '../database/pool'
 
 const router = Router();
@@ -21,7 +22,7 @@ router.post('/api/auth', async (req, res) => {
             return res.status(400).json({ error: "Username doesn't exist" });
         }
 
-        if (result.rows[0].password !== req.body.password) {
+        if (!await compare(req.body.password, result.rows[0].password)) {
             return res.status(400).json({ error: "Password incorrect" });
         }
 
