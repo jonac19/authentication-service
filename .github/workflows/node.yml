@@ -43,4 +43,4 @@ jobs:
           junitxml-title: Jest Unit Test Breakdown
           junitxml-path: ./coverage/clover.xml
           coverage-title: Coverage Breakdown
-          coverage-path: ./coverage/
+          coverage-path: ./coverage/coverage.txt
