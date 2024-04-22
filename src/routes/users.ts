@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { hash } from 'bcrypt';
 import pool from '../database/pool'
+import { hash } from 'bcrypt';
 
 const router = Router();
 
