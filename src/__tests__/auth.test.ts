@@ -1,4 +1,5 @@
 import { authController } from '../controllers/authController';
+import pool from '../database/pool';
 
 jest.mock('../database/pool', () => ({
     connect: jest.fn(() => mockedClient) 
@@ -93,8 +94,16 @@ describe('Tests for authentication', () => {
         mockedClient.query.mockResolvedValueOnce(mockedRow);
 
         await authController(mockedRequest, mockedResponse);
-        console.log(mockedRow.rows.length)
         expect(mockedResponse.status).toHaveBeenCalledWith(200);
+        expect(mockedResponse.json).toHaveBeenCalled();
+    });
+
+    it ('should send 500 status code when error is thrown', async () => {
+        const spy = jest.spyOn(pool, 'connect');
+        spy.mockImplementationOnce(jest.fn(() => {throw Error()}));
+        
+        await authController(mockedRequest, mockedResponse);
+        expect(mockedResponse.status).toHaveBeenCalledWith(500);
         expect(mockedResponse.json).toHaveBeenCalled();
     });
 });

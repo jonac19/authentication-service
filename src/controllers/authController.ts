@@ -2,15 +2,15 @@ import { compare } from 'bcrypt';
 import pool from '../database/pool'
 
 export async function authController(req: any, res: any) {
-    if (!req.body.username) {
-        return res.status(400).json({ error: "Username is missing" });
-    }
-
-    if (!req.body.password) {
-        return res.status(400).json({ error: "Password is missing" });
-    }
-
     try {
+        if (!req.body.username) {
+            return res.status(400).json({ error: "Username is missing" });
+        }
+
+        if (!req.body.password) {
+            return res.status(400).json({ error: "Password is missing" });
+        }
+        
         const client = await pool.connect();
         const result = await client.query('SELECT * FROM users WHERE username = $1', [req.body.username]);
         client.release();
