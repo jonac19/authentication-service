@@ -37,11 +37,9 @@ jobs:
         run: npm test
 
       - name: Jest Coverage Comment
-        uses: MishaKav/jest-coverage-comment@main
+        uses: MishaKav/jest-coverage-comment@latest
         with:
           title: Coverage Report
           summary-title: Coverage summary
-          coverage-summary-path: ./coverage/coverage-final.json
-          badge-title: Coverage
           coverage-title: Coverage Breakdown
           coverage-path: ./coverage/coverage.txt

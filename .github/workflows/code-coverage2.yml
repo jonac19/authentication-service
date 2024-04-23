@@ -37,4 +37,4 @@ jobs:
         run: npm test
 
       - name: Jest Coverage Comment
-        uses: ArtiomTr/jest-coverage-report-action@v2
+        uses: ArtiomTr/jest-coverage-report-action@latest
