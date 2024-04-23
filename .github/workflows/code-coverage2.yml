@@ -12,19 +12,14 @@ jobs:
       pull-requests: write
       repository-projects: write
 
-    strategy:
-      matrix:
-        node-version: [21.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4.1.3
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - name: Use Node.js @v4.0.2
+        uses: actions/setup-node@v4.0.2
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 21
           cache: "npm"
 
       - name: Install dependencies
@@ -37,4 +32,4 @@ jobs:
         run: npm test
 
       - name: Jest Coverage Comment
-        uses: ArtiomTr/jest-coverage-report-action@latest
+        uses: ArtiomTr/jest-coverage-report-action@v2.3.0
