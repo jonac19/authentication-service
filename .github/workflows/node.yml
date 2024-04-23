@@ -1,4 +1,4 @@
-name: Node.js CI
+name: Code Coverage
 
 on:
   push:
@@ -40,7 +40,7 @@ jobs:
         uses: MishaKav/jest-coverage-comment@main
         with:
           title: Coverage Report
-          junitxml-title: Jest Unit Test Breakdown
-          junitxml-path: ./coverage/clover.xml
+          summary-title: Coverage summary
+          coverage-summary-path: ./coverage/coverage-final.json
           coverage-title: Coverage Breakdown
           coverage-path: ./coverage/coverage.txt
