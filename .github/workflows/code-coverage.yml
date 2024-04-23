@@ -29,12 +29,12 @@ jobs:
         run: npm run build --if-present
 
       - name: Run tests
-        run: npm test
+        run: npm run test:coverage -- --json --outputFile="coverage/coverage-report.json"
 
       - name: Jest Coverage Comment
-        uses: MishaKav/jest-coverage-comment@v1.0.25
+        uses: ArtiomTr/jest-coverage-report-action@v2.3.0
         with:
-          title: Coverage Report
-          summary-title: Coverage summary
-          coverage-title: Coverage Breakdown
-          coverage-path: ./coverage/coverage.txt
+          skip-step: all
+          annotations: none
+          coverage-file: coverage/coverage-report.json
+          base-coverage-file: coverage/coverage-report.json
