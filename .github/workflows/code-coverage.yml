@@ -29,10 +29,10 @@ jobs:
         run: npm run build --if-present
 
       - name: Run tests
-        run: npm run test:coverage -- --json --outputFile="coverage/coverage-report.json"
+        run: npm run test:coverage --json --outputFile="coverage/coverage-report.json"
 
       - name: Jest Coverage Comment
-        uses: ArtiomTr/jest-coverage-report-action@v2.3.0
+        uses: ArtiomTr/jest-coverage-report-action@v2.2.9
         with:
           skip-step: all
           annotations: none

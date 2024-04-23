@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npx jest",
-    "test:coverage": "jest --coverage",
+    "test:coverage": "jest --coverage --json --outputFile='coverage/coverage-report.json'",
     "start": "node server.js"
   },
   "keywords": [],
