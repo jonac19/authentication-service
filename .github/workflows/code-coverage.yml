@@ -3,6 +3,10 @@ name: Code Coverage
 on:
   pull_request:
 
+defaults:
+  run:
+  working-directory: "backend"
+
 jobs:
   build:
     runs-on: windows-latest
@@ -27,3 +31,5 @@ jobs:
         uses: mattallty/jest-github-action@v1.0.3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          working-directory: "backend"
