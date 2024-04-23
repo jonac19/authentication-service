@@ -42,5 +42,6 @@ jobs:
           title: Coverage Report
           summary-title: Coverage summary
           coverage-summary-path: ./coverage/coverage-final.json
+          badge-title: Coverage
           coverage-title: Coverage Breakdown
           coverage-path: ./coverage/coverage.txt
