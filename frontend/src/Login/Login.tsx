@@ -22,12 +22,13 @@ export default function Login({ setToken }: LoginProp) {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
-        const token = await loginUser({
+        const res = await loginUser({
             username,
             password
         })
-        console.log(token)
-        setToken(token);
+        if ("token" in res) {
+            setToken(res.token);
+        }
     }
 
     return (
