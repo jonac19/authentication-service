@@ -19,6 +19,7 @@ async function loginUser(credentials: object) {
 export default function Login({ setToken }: LoginProp) {
     const [username, setUsername] = useState<string>();
     const [password, setPassword] = useState<string>();
+    const [error, setError] = useState<string>();
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
@@ -28,6 +29,8 @@ export default function Login({ setToken }: LoginProp) {
         })
         if ("token" in res) {
             setToken(res.token);
+        } else {
+            setError(res.msg);
         }
     }
 
@@ -36,14 +39,18 @@ export default function Login({ setToken }: LoginProp) {
             <h1>Please Log In</h1>
             <form onSubmit={handleSubmit}>
                 <label>
-                    Username:
+                    <p>Username:</p>
                     <input type="text" name="username" onChange={e => setUsername(e.target.value)} />
                 </label>
                 <label>
-                    Password:
+                    <p>Password:</p>
                     <input type="text" name="password" onChange={e => setPassword(e.target.value)} />
                 </label>
                 <input type="submit" value="Submit" />
+                <p className=''>{error}</p>
+                <div>
+                    <button type="submit" value="Submit">Submit</button>
+                </div>
             </form>
         </div>
     )
