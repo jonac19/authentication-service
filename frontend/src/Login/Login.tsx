@@ -1,5 +1,5 @@
 import React, {Dispatch, SetStateAction} from 'react';
-import LoginForm from './LoginForm';
+import LoginBody from './LoginBody/LoginBody';
 import LoginHeader from './LoginHeader';
 
 interface LoginProp {
@@ -8,9 +8,9 @@ interface LoginProp {
 
 export default function Login({ setToken }: LoginProp) {
     return (
-        <div>
+        <div className='login'>
             <LoginHeader />
-            <LoginForm setToken={setToken} />
+            <LoginBody setToken={setToken} />
         </div>
     )
 }

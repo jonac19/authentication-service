@@ -1,5 +1,5 @@
 import React, {Dispatch, SetStateAction, useState} from 'react';
-import './Login.css'
+import './LoginBody.css'
 
 interface LoginProp {
     setToken: Dispatch<SetStateAction<string | undefined>>
@@ -35,7 +35,7 @@ export default function LoginForm({ setToken }: LoginProp) {
     }
 
     return (
-        <div className='login-wrapper'>
+        <div className='login-form'>
             <h1>Please Log In</h1>
             <form onSubmit={handleSubmit}>
                 <label>
