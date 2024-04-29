@@ -1,4 +1,4 @@
-import { userController } from '../controllers/userController';
+import { authController } from '../controllers/authController';
 import pool from '../database/pool';
 
 jest.mock('../database/pool', () => ({
@@ -6,7 +6,7 @@ jest.mock('../database/pool', () => ({
 }));
 
 jest.mock('bcrypt', () => ({
-    hash: jest.fn((x) => x)
+    compare: jest.fn((x, y) => x === y)
 }));
 
 const mockedRequest = {
@@ -26,7 +26,7 @@ const mockedClient = {
     release: jest.fn()
 };
 
-describe('Tests for user api', () => {
+describe('Tests for authentication api', () => {
     beforeEach(() => {
         jest.clearAllMocks();
     })
@@ -38,7 +38,7 @@ describe('Tests for user api', () => {
             }
         };
 
-        await userController(testRequest, mockedResponse);
+        await authController(testRequest, mockedResponse);
         expect(mockedResponse.status).toHaveBeenCalledWith(400);
         expect(mockedResponse.json).toHaveBeenCalled();
     });
@@ -50,31 +50,48 @@ describe('Tests for user api', () => {
             }
         };
 
-        await userController(testRequest, mockedResponse);
+        await authController(testRequest, mockedResponse);
         expect(mockedResponse.status).toHaveBeenCalledWith(400);
         expect(mockedResponse.json).toHaveBeenCalled();
     });
 
-    it ('should send 400 status code when user already exists', async () => {
+    it ('should send 400 status code when user does not exist', async () => {
         const mockedRow = {
-            rows: [mockedRequest.body]
+            rows: []
         }
 
         mockedClient.query.mockResolvedValueOnce(mockedRow);
         
-        await userController(mockedRequest, mockedResponse);
+        await authController(mockedRequest, mockedResponse);
+        expect(mockedResponse.status).toHaveBeenCalledWith(400);
+        expect(mockedResponse.json).toHaveBeenCalled();
+    });
+
+    it ('should send 400 status code when password is incorrect', async () => {
+        const user = {
+            username: 'test_username',
+            password: 'different_password'
+        }
+
+        const mockedRow = {
+            rows: [user]
+        }
+
+        mockedClient.query.mockResolvedValueOnce(mockedRow);
+
+        await authController(mockedRequest, mockedResponse);
         expect(mockedResponse.status).toHaveBeenCalledWith(400);
         expect(mockedResponse.json).toHaveBeenCalled();
     });
 
     it ('should send 200 status code when credentials are correct', async () => {
         const mockedRow = {
-            rows: []
+            rows: [mockedRequest.body]
         }
 
         mockedClient.query.mockResolvedValueOnce(mockedRow);
 
-        await userController(mockedRequest, mockedResponse);
+        await authController(mockedRequest, mockedResponse);
         expect(mockedResponse.status).toHaveBeenCalledWith(200);
         expect(mockedResponse.json).toHaveBeenCalled();
     });
@@ -83,7 +100,7 @@ describe('Tests for user api', () => {
         const spy = jest.spyOn(pool, 'connect');
         spy.mockImplementationOnce(jest.fn(() => {throw Error()}));
         
-        await userController(mockedRequest, mockedResponse);
+        await authController(mockedRequest, mockedResponse);
         expect(mockedResponse.status).toHaveBeenCalledWith(500);
         expect(mockedResponse.json).toHaveBeenCalled();
     });
