@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from 'react';
 import LoginForm from './LoginForm';
-import './LoginBody.css'
+import '../Login.css';
 
 interface LoginProp {
     setToken: Dispatch<SetStateAction<string | undefined>>
