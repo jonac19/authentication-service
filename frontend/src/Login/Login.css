@@ -16,13 +16,13 @@
 }
 
 .login-body {
-    padding: 64px;
+    padding: 32px;
     background-color: black;
 }
 
 .login-form {
-    padding: 64px;
-    margin: 0px 16px;
+    padding: 128px;
+    margin: 16px;
     border-radius: 16px;
     display: flex;
     flex-direction: column;
