@@ -1,8 +1,25 @@
 import axios from 'axios';
 
+const TicketmasterClient = axios.create({
+    baseURL: "https://app.ticketmaster.com/discovery/v2/"
+});
+
 export async function getArtists(req: any, res: any) {
     try {
-        const response = await axios.get(`https://app.ticketmaster.com/discovery/v2/attractions?apikey=${process.env.TM_KEY}&locale=*&classificationId=KZFzniwnSyZfZ7v7nJ`)
+        const params = {
+            apikey: process.env.TM_KEY,
+            locale: "*",
+            classificationId: "KZFzniwnSyZfZ7v7nJ"
+        };
+
+        const response = await TicketmasterClient.get("attractions", {
+            params: params
+        });
+        
+        res.send(response.data);
+    } catch (error) {
+        console.error("Error querying Ticketmaster for artists");
+        res.status(500).json({ msg: "Internal server error" });
         res.send(response.data);
     } catch (error) {
         console.error("Error querying Ticketmaster");
