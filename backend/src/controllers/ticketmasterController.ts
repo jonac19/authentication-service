@@ -9,7 +9,7 @@ export async function getArtists(req: any, res: any) {
         const params = {
             apikey: process.env.TM_KEY,
             locale: "*",
-            classificationId: "KZFzniwnSyZfZ7v7nJ"
+            classificationId: process.env.TM_ARTIST_CLASS_ID
         };
 
         const response = await TicketmasterClient.get("attractions", {
