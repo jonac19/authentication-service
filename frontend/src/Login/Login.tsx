@@ -2,10 +2,7 @@ import React, {Dispatch, SetStateAction} from 'react';
 import LoginBody from './LoginBody/LoginBody';
 import LoginHeader from './LoginHeader';
 import './Login.css'
-
-interface LoginProp {
-    setToken: Dispatch<SetStateAction<string | undefined>>
-}
+import { LoginProp } from '../Interfaces/LoginProp'
 
 export default function Login({ setToken }: LoginProp) {
     return (

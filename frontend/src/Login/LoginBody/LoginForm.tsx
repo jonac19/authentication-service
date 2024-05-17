@@ -1,9 +1,6 @@
-import React, {Dispatch, SetStateAction, useState} from 'react';
+import React, { useState } from 'react';
 import '../Login.css';
-
-interface LoginProp {
-    setToken: Dispatch<SetStateAction<string | undefined>>
-}
+import { LoginProp } from '../../Interfaces/LoginProp'
 
 async function loginUser(credentials: object) {
     return fetch(`http://127.0.0.1:3000/api/auth`, {
