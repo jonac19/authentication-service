@@ -1,14 +1,12 @@
-type Artist = {
+export type ArtistData = {
     name: string,
     id: string,
     url: string,
     locale: string
 }
 
-type ArtistsData = {
+export type ArtistsData = {
     _embedded: {
-        attractions: Artist[]
+        attractions: ArtistData[]
     }
 }
-
-export default ArtistsData
