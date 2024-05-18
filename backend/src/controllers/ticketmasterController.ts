@@ -1,10 +1,19 @@
 import axios from 'axios';
+import fs from 'fs';
+import path from 'path';
 
 const TicketmasterClient = axios.create({
     baseURL: "https://app.ticketmaster.com/discovery/v2/"
 });
 
 export async function getArtists(req: any, res: any) {
+    if (process.env.DEV_MODE == "dev") {
+        fs.readFile(path.resolve(__dirname, './../__tests__/artists.json'), 'utf-8', (err, data) => {
+            res.send(JSON.parse(data));
+        })
+        return;
+    }
+
     try {
         const params = {
             apikey: process.env.TM_KEY,
