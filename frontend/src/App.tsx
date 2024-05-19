@@ -4,7 +4,7 @@ import Login from './Login/Login'
 function App() {
   const [token, setToken] = useState<string>();
 
-  if (!token) {
+  if (token) {
     return <Login setToken={setToken} />
   }
 

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { ArtistsData } from "../Interfaces/ArtistsData"
 import Artist from "./Artist"
+import "./Artists.css"
 
 async function get_artists() {
     return fetch(`http://127.0.0.1:3000/api/artists`, {
@@ -22,8 +23,7 @@ export default function Artists() {
     }, [])
 
     return (
-        <div>
-            <p>Artists</p>
+        <div className='artists'>
             {artists && artists._embedded.attractions.map((artist) => <Artist artist={artist} />)}
         </div>
     )
