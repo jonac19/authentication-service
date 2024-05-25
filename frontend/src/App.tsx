@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Login from './Login/Login'
+import ArtistsBody from './Artists/ArtistsBody';
 
 function App() {
   const [token, setToken] = useState<string>();
@@ -11,6 +12,7 @@ function App() {
   return (
     <div>
       <h1>Application</h1>
+      <ArtistsBody />
     </div>
   );
 }
