@@ -5,7 +5,7 @@ on:
 
 defaults:
   run:
-    working-directory: "backend"
+    working-directory: "./backend/"
 
 jobs:
   build:
@@ -20,6 +20,7 @@ jobs:
         with:
           node-version: 21
           cache: "npm"
+          cache-dependency-path: "./backend/package-lock.json"
 
       - name: Install dependencies
         run: npm ci
@@ -32,4 +33,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          working-directory: "backend"
+          working-directory: "./backend/"
