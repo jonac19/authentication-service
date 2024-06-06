@@ -5,7 +5,7 @@ import ArtistsBody from './Artists/ArtistsBody';
 function App() {
   const [token, setToken] = useState<string>();
 
-  if (token) {
+  if (!token) {
     return <Login setToken={setToken} />
   }
 
