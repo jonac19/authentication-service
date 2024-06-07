@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npx jest",
     "test:coverage": "jest --coverage",
-    "start": "npx tsc && node ./build/src/server.js"
+    "start": "npx tsc && node ./build/server.js"
   },
   "keywords": [],
   "author": "",
@@ -21,10 +21,13 @@
     "@types/bcrypt": "^5.0.2",
     "@types/cors": "^2.8.17",
     "@types/jest": "^29.5.12",
+    "axios": "^1.6.8",
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
+    "fs": "^0.0.1-security",
     "jest": "^29.7.0",
+    "path": "^0.12.7",
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
