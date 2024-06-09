@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../Login.css';
-import { LoginProp } from '../../Interfaces/LoginProp'
+import { LoginProp } from '../../data/LoginProp'
 
 async function loginUser(credentials: object) {
     return fetch(`http://127.0.0.1:3000/api/auth`, {
