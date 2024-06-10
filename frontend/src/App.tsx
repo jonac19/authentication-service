@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Login from './Login/Login'
 import ArtistsBody from './Artists/ArtistsBody';
 import Header from './Components/Header/Header'
+import Hero from './Components/Hero/Hero'
 import './App.css';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
   return (
     <div className='App'>
       <Header />
+      <Hero />
       <ArtistsBody />
     </div>
   );

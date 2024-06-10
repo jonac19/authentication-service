@@ -1,0 +1,21 @@
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 600px;
+    background-color: var(--primary-color);
+    text-align: center;
+}
+
+.hero-container h1 {
+    margin: 0;
+    margin-bottom: 48px;
+}
+
+.hero-container h3 {
+    margin: 0;
+}
+
+.hero-container h3 span {
+    display: block;
+}
