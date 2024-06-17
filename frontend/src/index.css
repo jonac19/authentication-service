@@ -29,4 +29,6 @@ h3 {
   --primary-color: #B1D676;
   --secondary-color: #95D235;
   --accent-color: #DFF4BF;
+  --button-hover-color: #D6E7BC;
+  --button-active-color: #EAFCD0;
 }
