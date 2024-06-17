@@ -16,13 +16,14 @@ export default function SearchBar({ placeholder }: SearchBarProps) {
     }
 
     return (
-        <form>
+        <form className='searchbar-container'>
             <input 
                 type='text'
                 value={searchTerm}
                 onChange={handleChange}
                 onKeyDown={handleEnter}
                 placeholder={placeholder}
+                className='searchbar'
             />
         </form>
     )
