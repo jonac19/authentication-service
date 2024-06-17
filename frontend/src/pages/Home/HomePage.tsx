@@ -1,7 +1,7 @@
 import Header from '../../components/Header/Header'
 import Hero from '../../components/Hero/Hero'
 import SearchBar from '../../components/SearchBar/SearchBar'
-import ArtistsBody from './Artists/ArtistsBody'
+import ArtistsSection from './Artists/ArtistsSection'
 
 
 export default function HomePage() {
@@ -10,7 +10,7 @@ export default function HomePage() {
             <Header />
             <Hero />
             <SearchBar placeholder='Search by Artist'/>
-            <ArtistsBody />
+            <ArtistsSection />
         </div>
     )
 }
