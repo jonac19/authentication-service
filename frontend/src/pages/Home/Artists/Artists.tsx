@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { ArtistsData } from "../data/ArtistsData"
+import { ArtistsData } from "../../../data/ArtistsData"
 import Artist from "./Artist"
 import "./Artists.css"
 

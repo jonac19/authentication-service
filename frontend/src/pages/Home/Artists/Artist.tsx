@@ -1,5 +1,5 @@
-import { ArtistProp } from "../data/ArtistProp";
-import { ArtistData } from "../data/ArtistsData";
+import { ArtistProp } from "../../../data/ArtistProp";
+import { ArtistData } from "../../../data/ArtistsData";
 import "./Artists.css"
 
 function getImage(artist: ArtistData) {
