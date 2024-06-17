@@ -25,6 +25,11 @@ h3 {
   font-weight: normal;
 }
 
+h4 {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
 :root {
   --primary-color: #B1D676;
   --secondary-color: #95D235;
