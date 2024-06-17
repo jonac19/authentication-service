@@ -23,7 +23,7 @@ export default function Artists() {
     }, [])
 
     return (
-        <div className='artists'>
+        <div className='artists-container'>
             {artists && artists._embedded.attractions.map((artist) => <Artist artist={artist} />)}
         </div>
     )

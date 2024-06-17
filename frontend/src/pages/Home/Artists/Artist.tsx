@@ -9,8 +9,12 @@ function getImage(artist: ArtistData) {
 export default function Artist({ artist }: ArtistProp) {
     return (
         <div className='artist'>
-            <img className='artist_img' src={getImage(artist).url} alt={artist.name}></img>
-            <h3>{artist.name}</h3>
+            <div className='artist-image-container'>
+                <img src={getImage(artist).url} alt={artist.name}></img>
+            </div>
+            <div className='artist-description-container'>
+                <h4>{artist.name}</h4>
+            </div>
         </div>
     )
 }
