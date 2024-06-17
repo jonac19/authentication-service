@@ -1,4 +1,3 @@
-import { ArtistProp } from "../../../data/ArtistProp";
 import { ArtistData } from "../../../data/ArtistsData";
 import "./Artists.css"
 
@@ -15,3 +14,8 @@ export default function Artist({ artist }: ArtistProp) {
         </div>
     )
 }
+
+interface ArtistProp {
+    artist: ArtistData
+}
+
