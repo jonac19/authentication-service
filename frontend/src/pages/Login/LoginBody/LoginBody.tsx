@@ -1,6 +1,6 @@
 import LoginForm from './LoginForm';
 import '../Login.css';
-import { LoginProp } from '../../data/LoginProp'
+import { LoginProp } from '../../../data/LoginProp'
 
 
 export default function LoginBody({ setToken }: LoginProp) {
