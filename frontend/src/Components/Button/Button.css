@@ -1,8 +1,8 @@
 .button {
     margin: 16px 0;
-    padding: 0;
+    width: 100%;
     min-height: 44px;
-    width: 328px;
+    max-width: 328px;
     background-color: var(--accent-color);
     border: none;
     border-radius: 10px;

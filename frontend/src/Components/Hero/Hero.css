@@ -2,18 +2,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 16px;
     min-height: 600px;
     background-color: var(--primary-color);
     text-align: center;
 }
 
-.hero-container h1 {
-    margin: 0;
-    margin-bottom: 48px;
+.hero-container {
+    flex-basis: 328px;
 }
 
-.hero-container h3, h4 {
-    margin: 0;
+.hero-container h1 {
+    margin-bottom: 48px;
 }
 
 .hero-container h3 span {
