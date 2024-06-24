@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Show from './Show'
-import { ShowsData, ShowData } from '../../../data/ShowsData'
+import { ShowsData } from '../../../data/ShowsData'
 import './Shows.css'
 
 export default function Shows() {

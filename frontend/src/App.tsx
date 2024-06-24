@@ -1,22 +1,18 @@
 import React, { useState } from 'react';
-import Login from './Login/Login'
-import ArtistsBody from './Artists/ArtistsBody';
-import Header from './Components/Header/Header'
-import Hero from './Components/Hero/Hero'
+import LoginPage from './pages/Login/LoginPage'
+import HomePage from './pages/Home/HomePage'
 import './App.css';
 
 function App() {
   const [token, setToken] = useState<string>();
 
   if (!token) {
-    return <Login setToken={setToken} />
+    return <LoginPage setToken={setToken} />
   }
 
   return (
     <div className='App'>
-      <Header />
-      <Hero />
-      <ArtistsBody />
+      <HomePage />
     </div>
   );
 }
