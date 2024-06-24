@@ -1,3 +1,5 @@
+import { Image } from './ImageData'
+
 export type ArtistsData = {
     _embedded: {
         attractions: ArtistData[]
@@ -10,11 +12,4 @@ export type ArtistData = {
     url: string,
     locale: string
     images: Image[]
-}
-
-type Image = {
-    ratio: string,
-    url: string,
-    width: number,
-    height: number
 }

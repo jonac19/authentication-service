@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import Button from '../../../components/Button/Button'
+import Divider from '../../../components/Divider/Divider'
 import '../Login.css';
-import { LoginProp } from '../../Interfaces/LoginProp'
+import { LoginProp } from '../../../data/LoginProp'
 
 async function loginUser(credentials: object) {
     return fetch(`http://127.0.0.1:3000/api/auth`, {
@@ -32,22 +34,13 @@ export default function LoginForm({ setToken }: LoginProp) {
     }
 
     return (
-        <div className='login-form'>
-            <h1>Please Log In</h1>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    <p>Username:</p>
-                    <input type="text" name="username" onChange={e => setUsername(e.target.value)} />
-                </label>
-                <label>
-                    <p>Password:</p>
-                    <input type="text" name="password" onChange={e => setPassword(e.target.value)} />
-                </label>
-                <p className=''>{error}</p>
-                <div>
-                    <button type="submit" value="Submit">Submit</button>
-                </div>
-            </form>
-        </div>
+        <form className='login-form' onSubmit={handleSubmit}>
+            <h4>{error}</h4>
+            <input type="text" name="username" placeholder='Username'onChange={e => setUsername(e.target.value)} />
+            <input type="text" name="password" placeholder='Password'onChange={e => setPassword(e.target.value)} />
+            <Button label='Submit' />
+            <Divider />
+            <Button label='Sign-in with Spotify' />
+        </form>
     )
 }

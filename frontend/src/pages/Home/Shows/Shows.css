@@ -1,0 +1,54 @@
+.shows-body {
+    margin-bottom: 24px;
+}
+
+.shows-body h2 {
+    margin-left: 16px;
+    margin-bottom: 16px;
+}
+
+.shows-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.shows-content Button {
+    margin-bottom: 0;
+}
+
+.shows-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+}
+
+.show {
+    display: flex;
+    height: 62px;
+    width: 100%;
+    max-width: 328px;
+}
+
+.show img {
+    width: 62px;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
+}
+
+.show-description-container {
+    padding: 8px 8px 8px 16px;
+    width: 100%;
+    background-color: var(--accent-color);
+    border-radius: 0 10px 10px 0;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.show-description-container h4 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { ArtistsData } from "../Interfaces/ArtistsData"
+import { ArtistsData } from "../../../data/ArtistsData"
 import Artist from "./Artist"
 import "./Artists.css"
 
@@ -23,7 +23,7 @@ export default function Artists() {
     }, [])
 
     return (
-        <div className='artists'>
+        <div className='artists-container'>
             {artists && artists._embedded.attractions.map((artist) => <Artist artist={artist} />)}
         </div>
     )

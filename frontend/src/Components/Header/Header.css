@@ -1,0 +1,7 @@
+.header {
+    display: flex;
+    height: 64px;
+    padding-left: 16px;
+    align-items: center;
+    background-color: var(--secondary-color);
+}
