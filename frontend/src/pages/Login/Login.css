@@ -26,3 +26,25 @@
 .login-form Button:first-of-type {
     margin-top: 12px;
 }
+
+.login-form input {
+    padding: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.login-form input:first-of-type {
+    margin-bottom: 4px;
+    border: none;
+    border-radius: 10px 10px 0 0;
+}
+
+.login-form input:last-of-type {
+    border: none;
+    border-radius: 0 0 10px 10px;
+}
+
+.login-form input:focus {
+    border-color: var(--primary-color)
+}

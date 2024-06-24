@@ -36,8 +36,8 @@ export default function LoginForm({ setToken }: LoginProp) {
     return (
         <form className='login-form' onSubmit={handleSubmit}>
             <h4>{error}</h4>
-            <input type="text" name="username" onChange={e => setUsername(e.target.value)} />
-            <input type="text" name="password" onChange={e => setPassword(e.target.value)} />
+            <input type="text" name="username" placeholder='Username'onChange={e => setUsername(e.target.value)} />
+            <input type="text" name="password" placeholder='Password'onChange={e => setPassword(e.target.value)} />
             <Button label='Submit' />
             <Divider />
             <Button label='Sign-in with Spotify' />
