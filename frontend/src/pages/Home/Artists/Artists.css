@@ -1,13 +1,13 @@
-.artists-body {
+.artists-section {
     margin-bottom: 24px;
 }
 
-.artists-body h2 {
+.artists-section h2 {
     margin-left: 16px;
     margin-bottom: 16px;
 }
 
-.artists-container {
+.artists-list {
     display: flex;
     gap: 16px;
     padding: 0 16px;
@@ -16,7 +16,7 @@
     scrollbar-width: none;
 }
 
-.artists-container::-webkit-scrollbar:horizontal {
+.artists-list::-webkit-scrollbar:horizontal {
     display: none;
 }
 
