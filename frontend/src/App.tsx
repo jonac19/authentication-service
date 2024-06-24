@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import LoginPage from './pages/Login/LoginPage'
 import HomePage from './pages/Home/HomePage'
-import './App.css';
 
 function App() {
   const [token, setToken] = useState<string>();
