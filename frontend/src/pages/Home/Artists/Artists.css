@@ -20,6 +20,11 @@
     display: none;
 }
 
+.artist {
+    color: black;
+    text-decoration: none;
+}
+
 .artist-image-container {
     display: flex;
     flex-wrap: wrap;

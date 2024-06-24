@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ArtistData } from "../../../data/ArtistsData";
 import "./Artists.css"
 
@@ -8,14 +9,14 @@ function getImage(artist: ArtistData) {
 
 export default function Artist({ artist }: ArtistProp) {
     return (
-        <div className='artist'>
+        <Link className='artist' to={`/artist/${artist.id}`}>
             <div className='artist-image-container'>
                 <img src={getImage(artist).url} alt={artist.name}></img>
             </div>
             <div className='artist-description-container'>
                 <h4>{artist.name}</h4>
             </div>
-        </div>
+        </Link>
     )
 }
 
