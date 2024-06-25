@@ -6,11 +6,11 @@ import ShowsSection from './Shows/ShowsSection'
 
 export default function HomePage() {
     return (
-        <div>
+        <>
             <Hero />
             <SearchBar placeholder='Search by Artist'/>
             <ArtistsSection />
             <ShowsSection />
-        </div>
+        </>
     )
 }
