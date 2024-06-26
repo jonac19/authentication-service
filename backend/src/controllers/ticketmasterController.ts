@@ -49,3 +49,41 @@ export async function getArtist(req: any, res: any, client = TicketmasterClient)
         res.status(500).json({ msg: "Internal server error" });
     }
 }
+
+export async function getShows(req: any, res: any, client = TicketmasterClient) {
+    try {
+        const params = {
+            apikey: process.env.TM_KEY,
+            locale: "*",
+            classificationId: process.env.TM_ARTIST_CLASS_ID
+        };
+
+        const response = await client.get("events", {
+            params: params
+        });
+        
+        res.status(200).json(response.data);
+    } catch (error) {
+        console.error("Error querying Ticketmaster for shows");
+        res.status(500).json({ msg: "Internal server error" });
+    }
+}
+
+export async function getShowsByArtist(req: any, res: any, client = TicketmasterClient) {
+    try {
+        const params = {
+            apikey: process.env.TM_KEY,
+            locale: "*",
+            attractionId: req.params.artistId
+        };
+
+        const response = await client.get('events', {
+            params: params
+        });
+    
+        res.status(200).json(response.data);
+    } catch (error) {
+        console.error("Error querying Ticketmaster for show");
+        res.status(500).json({ msg: "Internal server error" });
+    }
+}
