@@ -1,0 +1,27 @@
+.tabs ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.tab-button-container {
+    width: 100%;
+}
+
+.tab-button-container button {
+    width: 100%;
+    height: 64px;
+    background-color: var(--accent-color);
+    border: none;
+    font-size: 1.25rem
+}
+
+.tab-button-container.active button {
+    background-color: var(--secondary-color);
+    box-shadow: inset 0 0 5px 0 grey;
+}
+
+.tab-button-container + .tab-button-container {
+    border-left: 3px solid grey;
+}
