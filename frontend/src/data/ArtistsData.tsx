@@ -7,9 +7,11 @@ export type ArtistsData = {
 }
 
 export type ArtistData = {
-    name: string,
     id: string,
-    url: string,
     locale: string
+    name: string,
+    description: string,
+    additionalInfo: string,
+    url: string,
     images: Image[]
 }
