@@ -5,6 +5,7 @@ import Tab from "../../components/Tabs/Tab";
 import { Image } from "../../data/ImageData";
 import { ArtistData } from "../../data/ArtistsData"
 import './Artist.css'
+import ShowsSection from "./ShowsSection";
 
 function getImage(artist: ArtistData): Image {
     const image = artist.images.find((image) => image.width === 305 && image.height === 225)
@@ -39,10 +40,11 @@ export default function ArtistPage() {
                     <h2>{artist.name}</h2>
                     <Tabs>
                         <Tab label='Shows'>
-                            <div>Shows Information</div>
+                            <h3>Shows Information</h3>
+                            <ShowsSection artistId={id} />
                         </Tab>
                         <Tab label='About'>
-                            <div>About Information</div>
+                            <h3>About Information</h3>
                         </Tab>
                     </Tabs>
                 </div>
